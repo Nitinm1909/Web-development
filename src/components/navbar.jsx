@@ -115,6 +115,7 @@ const Navbar = () => {
               <p className="dropdown-subtext">Access account and manage orders</p>
               <Link to="/login" className="dropdown-button" onClick={() => setDropdownVisible(false)}>Login / Signup</Link>
               <hr className="dropdown-divider" />
+              <Link to="/profile" className="dropdown-item">My Profile</Link>
               <Link to="/orders" className="dropdown-item">Orders</Link>
               <Link to="/wishlist" className="dropdown-item">Wishlist</Link>
               <Link to="/contact" className="dropdown-item">Contact Us</Link>
