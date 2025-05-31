@@ -1,0 +1,140 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Background gradient */
+.hearing-test-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #5b98e2, #5de9e6, #eb408a);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ✅ Animated Waves */
+.waves {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.waves::before,
+.waves::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 80%);
+  top: -50%;
+  left: -50%;
+  animation: wave-animation 8s infinite linear;
+}
+
+.waves::after {
+  animation-delay: -4s;
+}
+
+/* ✅ Wave Animation */
+@keyframes wave-animation {
+  0% { transform: translateY(10px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(180deg); }
+  100% { transform: translateY(10px) rotate(360deg); }
+}
+
+/* ✅ Test Box Animation for ALL Question Steps */
+.test-box {
+  width: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 2;
+  animation: fade-in-box 0.8s ease-in-out;
+}
+
+/* Question Container (for all steps) */
+.question-container {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* Glide In Animation */
+.glide-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fade Out Animation */
+.fade-out {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* ✅ Added space between question text and buttons */
+.question-container p {
+  margin-bottom: 30px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Buttons */
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn, .start-btn {
+  background: #b02ce0;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+/* ✅ Fade animation for all question boxes */
+@keyframes fade-in-box {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Start Test Container Wrapper */
+.start-test-container-wrapper {
+  background: inherit;
+  border-radius: inherit;
+  padding: inherit;
+  position: relative;
+  z-index: 1;
+}
+
+/* Start Test Container (White Box) */
+.start-test-container {
+  background: transparent;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+
+
+/* Caption Style */
+.caption {
+  font-size: 14px;
+  text-align: center;
+}
