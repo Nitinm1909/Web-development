@@ -3,11 +3,18 @@ import { FaCheckCircle, FaStar, FaAward } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import Slider from 'react-slick';
 import CountUp from 'react-countup';
+import Nitin from './assets/Nitin.jpeg';
+import Rithika from './assets/Rithika.jpeg';
+import Janani from './assets/Janani.jpeg';
+import Harinee from './assets/Harinee.jpeg';
 
 // Dummy Data
 const teamMembers = [
-  { name: 'John Doe', role: 'Audiologist', image: 'https://via.placeholder.com/150?text=Team+Member+1' },
-  { name: 'Jane Smith', role: 'Technician', image: 'https://via.placeholder.com/150?text=Team+Member+2' },
+  { name: 'Nitin', role: 'CEO', image: Nitin },
+  { name: 'Rithika', role: 'Employee', image: Rithika },
+  { name: 'Janani', role: 'Employee', image: Janani },
+  { name: 'Harinee', role: 'Employee', image: Harinee },
+
 ];
 
 const testimonials = [
