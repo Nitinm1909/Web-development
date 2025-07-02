@@ -1,0 +1,211 @@
+/* ✅ Hero Container Blur + Glow */
+.hero-container {
+  width: 90vw;
+  height: 85vh;
+  overflow: hidden;
+  position: relative;
+  margin: 70px auto;
+  top: -0.8rem;
+  border-radius: 25px;
+  z-index: 2;
+  backdrop-filter: blur(4px);
+}
+
+.hero-container::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: inherit;
+  filter: blur(50px);
+  z-index: -1;
+  border-radius: 40px;
+  opacity: 0.7;
+}
+
+/* ✅ Body Background */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  transition: background 0.8s ease-in-out;
+  background: linear-gradient(to bottom, #bbb4e4, #f2daf6, #d9f3fa, #ffffff);
+}
+
+/* ✅ Slide Styles */
+.slide {
+  width: 100vw;
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.8s ease-in-out;
+  isolation: isolate;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.25);
+  mix-blend-mode: overlay;
+  filter: blur(20px);
+  z-index: 0;
+}
+
+/* ✅ Slide Background Images */
+.slide1 { background-image: url("./assets/products/bg1.png"); }
+.slide2 { background-image: url("./assets/products/bg2.png"); }
+.slide3 { background-image: url("./assets/products/bg3.png"); }
+
+/* ✅ Slick Slider Fixes */
+.slick-slider {
+  overflow: visible;
+  width: 100vw;
+}
+
+.slick-list {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.slick-track {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* ✅ Product Images */
+.product-image {
+  height: auto;
+  max-width: 60%;
+  position: absolute;
+  z-index: 2;
+  will-change: transform, opacity;
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+.product-image-1 {
+  width: 700px;
+  bottom: 1%;
+  left: 45%;
+  transform: translateX(-50%);
+}
+
+.product-image-2,
+.product-image-3 {
+  width: 800px;
+  right: 15%;
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.slick-active .product-image-2,
+.slick-active .product-image-3 {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+/* ✅ Captions */
+.caption {
+  position: absolute;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+  max-width: 450px;
+  z-index: 2;
+  will-change: transform, opacity;
+}
+
+.slick-active .caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.caption h2 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.caption p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+/* ✅ Caption Positions */
+.slide1 .caption {
+  top: 3%;
+  left: 45%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #44405b;
+}
+
+.slide2 .caption,
+.slide3 .caption {
+  top: 35%;
+  left: 10%;
+  transform: translateY(-50%);
+}
+
+.slide2 .caption { color: #f0f0f0; }
+.slide3 .caption { color: #326208; }
+
+/* ✅ Button */
+.buy-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.buy-btn:hover {
+  background-color: #131313;
+}
+
+/* ✅ Dots */
+.slick-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 47%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.slick-dots li button:before {
+  font-size: 13px;
+  color: white;
+  opacity: 0.7;
+}
+
+.slick-dots li.slick-active button:before {
+  color: white;
+  opacity: 1;
+}
+
+/* ✅ Hide Arrows from Slick */
+.slick-prev,
+.slick-next {
+  display: none !important;
+}
+
+/* ✅ Slide Transition */
+.slick-slide {
+  transition: transform 0.8s ease-in-out !important;
+}

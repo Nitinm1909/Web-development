@@ -1,0 +1,143 @@
+@font-face {
+  font-family: 'Pacifica';
+  src: url('./assets/fonts/PacificaCondensed-Regular.ttf') format('truetype');
+}
+
+.footer {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.85);
+  font-family: 'Arial', sans-serif;
+  color: #eee;
+  padding-top: 60px;
+}
+
+.footer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 130%;
+  background-image: url('./assets/hearing-test.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+  padding: 0 4rem 3rem;
+}
+
+.brand-title {
+  font-family: 'Pacifica', cursive;
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.footer-links ul,
+.footer-contact p {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: 1.7;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #ccc;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #fff;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+}
+
+.footer-newsletter form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-newsletter input[type="email"] {
+  padding: 0.6rem;
+  border: none;
+  border-radius: 6px;
+}
+
+.footer-newsletter button {
+  padding: 0.6rem;
+  background-color: #ffd700;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.footer-newsletter button:hover {
+  background-color: #f7c800;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  background-color: rgba(0, 0, 0, 0.85);
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid #444;
+}
+
+.floating-consultation {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #cfbbff; /* mild lilac */
+  padding: 12px 16px;
+  border-radius: 40px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.floating-consultation:hover {
+  transform: scale(1.05);
+}
+
+.floating-consultation a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.social-icons {
+  margin-top: 12px;
+  display: flex;
+  gap: 12px;
+}
+
+.social-icons a {
+  color: #ddd;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
